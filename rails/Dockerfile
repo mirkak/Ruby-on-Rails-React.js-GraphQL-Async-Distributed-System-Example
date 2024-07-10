@@ -17,8 +17,7 @@ RUN apt-get update -qq && \
         libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-# ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 EXPOSE 3000
-CMD ["tail", "-f", "/dev/null"]
-# CMD ["./bin/rails", "server"]
+CMD ["./bin/rails", "server"]
